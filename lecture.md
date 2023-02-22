@@ -727,7 +727,7 @@ oModel.remove('/URL(Key)', {
 # 4. PS&C 개발환경
 ## 4.1. 개발환경(vscode, git, eclipse)
 ### 4.1.1. git
-- [Git SCM](https://git-scm.com/)
+- Install [Git SCM](https://git-scm.com/)
 - git configuration
     ```sh
     git config --global user.name "Your Name"
