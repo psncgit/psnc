@@ -740,4 +740,54 @@ oModel.remove('/URL(Key)', {
 - [Installing SAPUI5 Tools for Eclipse](https://help.sap.com/saphelp_snc700_ehp04/helpdata/de/f2/5b203ec8254605a3bcbc07734b3c20/content.htm?no_cache=true)
 ## 4.2. SAPUI5 응용프로그램의 배포와 유지보수
 ### 4.2.1. Visual Studio Code
+> Yesco를 예로 설명
+
+1. CTS번호 update - /.nwabaprc > abap_transport
+```json
+{
+    "base": "./dist",
+    "files": [
+      "index.html",
+      "postcode.html",
+      "manifest.json",
+      "Component-preload.js",
+      "asset/css/**",
+      "i18n/**"
+    ],
+    "conn_usestrictssl" : false,
+    "conn_server": "https://yeshrsapdev.yescoholdings.com:8443/",
+    "conn_client": "100",
+    "conn_user": "HR24",
+    "conn_password": "haezomi",
+    "abap_bsp": "zui5_yescohr",
+    "abap_bsp_text": "UI5 yesco e-HR",
+    "abap_package": "ZHR1",
+    "abap_transport": "YHDK904224", // 유효한 CTS번호로 수정 필요
+    "calcappindex": true,
+    "preserve_unselected": false
+}
+```
+2. Build & Deploy
+```sh
+npm run deploy
+```
+3. 개발배포 확인
+   - [100 client](https://yeshrsapdev.yescoholdings.com:8443/sap/bc/ui5_ui5/sap/zui5_yescohr/index.html?sap-client=100&saml2=disabled)
+   - [300 client](https://yeshrsapdev.yescoholdings.com:8443/sap/bc/ui5_ui5/sap/zui5_yescohr/index.html?sap-client=300&saml2=disabled)
+4. CTS 이관 후 운영배포 확인
+   - [Production client](https://yeshrsapprdv.yescoholdings.com:44401/hey/index.html?&saml2=disabled)
 ### 4.2.2. Eclipse
+1. CTS 번호확인
+
+![SE09 - CTS](asset/images/se09.png "CTS Number")
+
+2. Eclipse team > update
+   
+![Team update](asset/images/eclipse_team_update.png "Team update")
+
+![Select Resources to Submit](asset/images/eclipse_team_update-2.png "Select Resources to Submit")
+
+![Submit Changes](asset/images/eclipse_team_update-3.png "Submit Changes")
+
+3. 배포 확인
+   - 각 회사 개발 Web확인
