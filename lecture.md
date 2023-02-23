@@ -40,8 +40,9 @@
 - [4. PS\&C 개발환경](#4-psc-개발환경)
   - [4.1. 개발환경(vscode, git, eclipse)](#41-개발환경vscode-git-eclipse)
     - [4.1.1. git](#411-git)
-    - [4.2.1. Visual Studio Code(vscode)](#421-visual-studio-codevscode)
-    - [4.2.3. eclipse](#423-eclipse)
+    - [4.1.2. Node.js](#412-nodejs)
+    - [4.1.3. Visual Studio Code(vscode)](#413-visual-studio-codevscode)
+    - [4.1.4. eclipse](#414-eclipse)
   - [4.2. SAPUI5 응용프로그램의 배포와 유지보수](#42-sapui5-응용프로그램의-배포와-유지보수)
     - [4.2.1. Visual Studio Code](#421-visual-studio-code)
     - [4.2.2. Eclipse](#422-eclipse)
@@ -734,9 +735,17 @@ oModel.remove('/URL(Key)', {
     git config --global user.email you@example.com
     git config --global http.sslVerify false
     ```
-### 4.2.1. Visual Studio Code(vscode)
+### 4.1.2. Node.js
+- Install [Node.js](https://nodejs.org/ko/download/)
+
+|Project|Node version|
+|------|:---:|
+|Yesco|**16**|
+|DoosanTesna|**16**|
+
+### 4.1.3. Visual Studio Code(vscode)
 - [Visual Studio Code setup guide](https://github.com/psncgit/psnc/blob/main/vscode.md)
-### 4.2.3. eclipse
+### 4.1.4. eclipse
 - [Installing SAPUI5 Tools for Eclipse](https://help.sap.com/saphelp_snc700_ehp04/helpdata/de/f2/5b203ec8254605a3bcbc07734b3c20/content.htm?no_cache=true)
 ## 4.2. SAPUI5 응용프로그램의 배포와 유지보수
 ### 4.2.1. Visual Studio Code
@@ -791,3 +800,45 @@ npm run deploy
 
 3. 배포 확인
    - 각 회사 개발 Web확인
+
+- **Doosan**
+  - [GHD 개발](http://dsghrerpd01.corp.Doosan.com:8000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=300#Shell-home)
+  - [GHQ QA](https://dsghrerpq01.corp.doosan.com:1443/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html)
+  - [Fiori Designer GHD](http://dsghrerpd01.corp.doosan.com:8000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=300)
+
+  |Company|UI5 root|비고|
+  |------|---|---|
+  |밥캣|ZHRXX_PAAPP||
+  |국내 근태|ZHRXX_TMAPP||
+  |EU 근태|ZHRXX_TMAPP_E||
+  |모트롤|ZHRXX_TMAPP_M|미사용|
+  |Launchpad custom time|ZHRXX_TMTILEAPP||
+
+
+- **Spigen**
+  - [개발](http://spgsedvdap01p.spigen.com:50000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=100&sap-language=KO#Shell-home)
+  - [운영](https://spgkrsepap01.spigen.com:50000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=100&sap-language=KO#Shell-home)
+  - [Fiori Designer GHD](http://spgsedvdap01p.spigen.com:50000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=200) : 클라이언트 200에서 작업 후 SCC1에서 클라이언트 100으로 반영해야 함
+
+
+  |Company|UI5 root|비고|
+  |------|---|---|
+  |공통|ZNK_COMMON_UI5||
+  |HQ|ZUI5_HR_ESSAPP||
+  |SQ|ZUI5_HR_SQ||
+  |Launchpad custom time|ZUI5_HR_TILE||
+  |연말정산|ZUI5_HR_YET||
+
+
+- **SK넥실리스**
+  - [개발](http://erpdev.kcft.co.kr:8000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=300&sap-language=KO#Shell-home)
+  - [Fiori Designer](http://e-hrd.kcft.co.kr:8000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=200)
+
+
+  |Company|UI5 root|비고|
+  |------|---|---|
+  |공통|ZHRF0001||
+  ||ZHRF0002||
+  |Launchpad custom time|ZHRF0003||
+  |근태|ZHRF0007||
+  |기능직 근태|ZHRF0008||
