@@ -105,8 +105,12 @@ div {
 }
 ```
  > **Flex Box**
+* [Flexbox - MDN Web Docs - Mozilla](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Flexbox)
+* [W3School](https://github.com/psncgit/psnc/blob/main/lecture.md)
 * https://blog.webdevsimplified.com/2021-11/flexbox/
  > **CSSGrid**
+* [W3School](https://www.w3schools.com/css/css_grid.asp)
+* [Grid - MDN Web Docs - Mozilla](https://developer.mozilla.org/ko/docs/Web/CSS/grid)
 * https://blog.logrocket.com/css-grid-guide/
 ## 1.3. HTML과 CSS를 사용하여 간단한 웹 페이지 작성
 ```html
@@ -596,31 +600,31 @@ sap.ui.define([
 #### 3.5.6.1. Examples for more complex expressions
 ```xml
 <!--Set to visible if the status is critical and the amount is above the threshold (note escaping of &&)-->
-visible="{= ${status} === 'critical' &amp;&amp; ${amount} > 10000 }"
+<Text visible="{= ${status} === 'critical' &amp;&amp; ${amount} > 10000 }" />
 
 <!--Text for amount level using language-dependent texts from the resource model.-->
-text="{= ${/amount} > 10000 ? ${i18n>/high} : ${i18n>/normal} }"
+<Text text="{= ${/amount} > 10000 ? ${i18n>/high} : ${i18n>/normal} }" />
 
 <!--Set to visible if the rating is VIP, ignoring case or if the order amount is greater than 10,000.-->
-visible="{= ${/rating}.toUpperCase() === 'VIP' || ${/orderAmount} > 10000 }"
+<Text visible="{= ${/rating}.toUpperCase() === 'VIP' || ${/orderAmount} > 10000 }" />
 
 <!--Set to visible if the rating contains VIP, ignoring the case. -->
-visible={= RegExp('vip', 'i').test(${/rating}) }
+<Text visible="{= RegExp('vip', 'i').test(${/rating}) }" />
 
 <!--Text is maximum of three values.-->
-text="{= Math.max(${/value1}, ${/value2}, ${/value3}) }"
+<Text text="{= Math.max(${/value1}, ${/value2}, ${/value3}) }" />
 
 <!--Control is enabled only if the order status is set.--> 
-enabled="{= ${/orderStatus} !== null }"
+<Text enabled="{= ${/orderStatus} !== null }" />
 
 <!--set text to the second string 'middle', access second element in the array generated via 'split'-->
-text="{= 'small@middle@long'.split('@')[1] }"
+<Text text="{= 'small@middle@long'.split('@')[1] }" />
 
 <!-- Concatenate literal strings and expression bindings or bindings -->
-text="Hello {=${gender}==='male' ? 'Mr.' : 'Mrs.'} {lastName}"
+<Text text="Hello {=${gender}==='male' ? 'Mr.' : 'Mrs.'} {lastName}" />
 
 <!--Control such as a button in the toolbar of a table is enabled only if there are items in the table .-->
-enabled="{= ${/items}.length>0 }"
+<Text enabled="{= ${/items}.length>0 }" />
 ```
 ## 3.6. SAPUI5 이벤트 처리
 > 이벤트 처리는 뷰에서 발생하는 이벤트에 대해 컨트롤러에서 처리하는 방식
@@ -801,7 +805,9 @@ npm run deploy
 3. 배포 확인
    - 각 회사 개발 Web확인
 
-- **Doosan**
+<br />
+
+![Doosan](asset/images/doosan.png "Doosan")
   - [GHD 개발](http://dsghrerpd01.corp.Doosan.com:8000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=300#Shell-home)
   - [GHQ QA](https://dsghrerpq01.corp.doosan.com:1443/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html)
   - [Fiori Designer GHD](http://dsghrerpd01.corp.doosan.com:8000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=300)
@@ -814,8 +820,11 @@ npm run deploy
   |모트롤|ZHRXX_TMAPP_M|미사용|
   |Launchpad custom time|ZHRXX_TMTILEAPP||
 
+---
 
-- **Spigen**
+<br />
+
+![Spigen](asset/images/spigen.png "Spigen")
   - [개발](http://spgsedvdap01p.spigen.com:50000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=100&sap-language=KO#Shell-home)
   - [운영](https://spgkrsepap01.spigen.com:50000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=100&sap-language=KO#Shell-home)
   - [Fiori Designer GHD](http://spgsedvdap01p.spigen.com:50000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=200) : 클라이언트 200에서 작업 후 SCC1에서 클라이언트 100으로 반영해야 함
@@ -829,8 +838,11 @@ npm run deploy
   |Launchpad custom time|ZUI5_HR_TILE||
   |연말정산|ZUI5_HR_YET||
 
+---
 
-- **SK넥실리스**
+<br />
+
+![SK넥실리스](asset/images/sk.jpg "SK넥실리스")
   - [개발](http://erpdev.kcft.co.kr:8000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchPad.html?sap-client=300&sap-language=KO#Shell-home)
   - [Fiori Designer](http://e-hrd.kcft.co.kr:8000/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html?sap-client=200)
 
@@ -842,3 +854,5 @@ npm run deploy
   |Launchpad custom time|ZHRF0003||
   |근태|ZHRF0007||
   |기능직 근태|ZHRF0008||
+
+---
